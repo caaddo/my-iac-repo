@@ -1,0 +1,11 @@
+Vagrant.configure("2") do |config|
+  # define provider configuration
+  config.vm.provider :virtualbox do |v|
+    v.memory = 1024
+  end
+  # define a VM machine configuration
+  config.vm.define "raddit-app" do |app|
+    app.vm.box = "ubuntu/xenial64"
+    app.vm.hostname = "raddit-app"
+  end
+end
